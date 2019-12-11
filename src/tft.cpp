@@ -18,8 +18,8 @@
 #define LINE_HEIGHT_TEXT_SIZE_2 20
 
 TFT::TFT(struct temperatures *ptr_temperaure, struct acceleration_measurements *ptr_acceleration_measurements) {
-  adafruit = new Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
-  m_ptr_temperatures = ptr_temperaure;
+  adafruit                        = new Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
+  m_ptr_temperatures              = ptr_temperaure;
   m_ptr_acceleration_measurements = ptr_acceleration_measurements;
   setup();
 }
@@ -49,7 +49,7 @@ void TFT::drawTime() {
   adafruit->setCursor(45, 30);
   adafruit->setTextColor(ST7735_WHITE, ST7735_BLACK);
   adafruit->setTextWrap(true);
-  adafruit->print(Time.format(Time.now(),"%H:%M %Y"));
+  adafruit->print(Time.format(Time.now(), "%H:%M %Y"));
 }
 
 void TFT::clearScreen() { adafruit->fillScreen(ST7735_BLACK); }
@@ -60,25 +60,25 @@ void TFT::drawAcc() {
   adafruit->setTextWrap(true);
 
   const char *key;
-  int current;
+  int         current;
 
   for (int i = 0; i < 3; i++) {
     switch (i) {
-      case 0:
-        key = "ax:";
-        current = m_ptr_acceleration_measurements->ax;
-        break;
-      case 1:
-        key = "ay:";
-        current = m_ptr_acceleration_measurements->ay;
-        break;
-      case 2:
-        key = "az:";
-        current = m_ptr_acceleration_measurements->az;
-        break;
-      default:
-        key = "error";
-        break;
+    case 0:
+      key     = "ax:";
+      current = m_ptr_acceleration_measurements->ax;
+      break;
+    case 1:
+      key     = "ay:";
+      current = m_ptr_acceleration_measurements->ay;
+      break;
+    case 2:
+      key     = "az:";
+      current = m_ptr_acceleration_measurements->az;
+      break;
+    default:
+      key = "error";
+      break;
     }
     sprintf(buffer, "%6d", current);
 
@@ -120,29 +120,28 @@ void TFT::drawTempAndHumidity() {
   adafruit->setTextWrap(true);
 
   const char *key;
-  float current;
+  double      current;
 
   for (int i = 0; i < 3; i++) {
     switch (i) {
-      case 0:
-        key = "Water:";
-        current = m_ptr_temperatures->currentWaterTemp;
-        break;
-      case 1:
-        key = "Air:";
-        current = m_ptr_temperatures->currentOnLandTemperature;
-        break;
-      case 2:
-        key = "Humid:";
-        current = m_ptr_temperatures->currentOnLandHumidity;
-        break;
-      default:
-        key = "error";
-        break;
+    case 0:
+      key     = "Water:";
+      current = m_ptr_temperatures->currentWaterTemp;
+      break;
+    case 1:
+      key     = "Air:";
+      current = m_ptr_temperatures->currentOnLandTemperature;
+      break;
+    case 2:
+      key     = "Humid:";
+      current = m_ptr_temperatures->currentOnLandHumidity;
+      break;
+    default:
+      key = "error";
+      break;
     }
 
     sprintf(buffer, "%0.1f", current);
-    
 
     adafruit->setCursor(8, Y_OFFSET_SIZE_2 + (i + 1) * LINE_HEIGHT_TEXT_SIZE_2);
     adafruit->print(key);

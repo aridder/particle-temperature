@@ -3,8 +3,9 @@
 
 #define RED_LIGHT_OUTPUT D6
 
-Light::Light(struct temperatures *ptr_temperatures) {
+Light::Light(struct temperatures *ptr_temperatures, struct calibrations *ptr_calibration) {
   m_ptr_temperatures = ptr_temperatures;
+  m_ptr_calibrations = ptr_calibration;
   setup();
 }
 

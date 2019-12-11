@@ -1,4 +1,5 @@
 {
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, AlignConsecutiveDeclarations: true, ColumnLimit: 0, AlignConsecutiveAssignments: true}",
     "extensions.ignoreRecommendations": true,
     "cortex-debug.openocdPath": "${command:particle.getDebuggerOpenocdPath}",
     "files.associations": {

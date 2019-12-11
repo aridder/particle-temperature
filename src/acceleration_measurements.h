@@ -1,7 +1,6 @@
 #ifndef ACCELERATION_MEASUREMENTS_H
 #define ACCELERATION_MEASUREMENTS_H
 
-
 struct acceleration_measurements {
   int ax;
   int ay;

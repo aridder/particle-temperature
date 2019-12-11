@@ -5,9 +5,10 @@
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
-AirtempAndHumiditySensor::AirtempAndHumiditySensor(struct temperatures *ptr_temperatures) {
+AirtempAndHumiditySensor::AirtempAndHumiditySensor(struct temperatures *ptr_temperatures, struct calibrations *ptr_calibrations) {
   Serial.println("In setup temp and humidity");
   m_ptr_temperatures = ptr_temperatures;
+  m_ptr_calibrations = ptr_calibrations;
   setup();
 }
 
@@ -22,10 +23,9 @@ void AirtempAndHumiditySensor::begin() {
 }
 
 void AirtempAndHumiditySensor::readCelsiusFromSensor() {
-  m_ptr_temperatures->currentOnLandTemperature = dht.getTempCelcius();
+  m_ptr_temperatures->currentOnLandTemperature = (double)dht.getTempCelcius() + m_ptr_calibrations->airTempCalibration;
 }
 
-
 void AirtempAndHumiditySensor::readHumidityFromSensor() {
-  m_ptr_temperatures->currentOnLandHumidity = dht.getHumidity();
+  m_ptr_temperatures->currentOnLandHumidity = (double)dht.getHumidity() + m_ptr_calibrations->landHumidityCalibration;
 }

@@ -2,9 +2,9 @@
 #define TEMPERATURES_H
 
 struct temperatures {
-  float currentWaterTemp;
-  float currentOnLandHumidity;
-  float currentOnLandTemperature;
+  double currentWaterTemp;
+  double currentOnLandHumidity;
+  double currentOnLandTemperature;
   int number_of_wave_measurments;
 };
 

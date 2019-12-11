@@ -24,6 +24,8 @@ void ParticleCommunication::begin() {
   Particle.function("calibrateAirHumidityFunction", &ParticleCommunication::calibrateAirHumidty, this);
 
   Particle.function("setTimeZone", &ParticleCommunication::setTimeZone, this);
+
+  Particle.function("setLightOnLimit", &ParticleCommunication::setLightOnLimit, this);
 }
 
 int ParticleCommunication::calibrateWaterTemp(String body) {

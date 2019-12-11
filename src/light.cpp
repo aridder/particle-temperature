@@ -22,7 +22,7 @@ void Light::setup() {
 }
 
 void Light::setRedLight() {
-  if (m_ptr_temperatures->currentWaterTemp > 24.00) {
+  if ((m_ptr_temperatures->currentWaterTemp) > m_ptr_calibrations->lightOnLimit) {
     newSetLightBool = true;
   } else {
     newSetLightBool = false;

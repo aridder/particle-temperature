@@ -14,6 +14,8 @@ public:
   int  calibrateAirHumidty(String body);
   int  setTimeZone(String body);
   int  setLightOnLimit(String body);
+  
+  void publishData();
   void begin();
 
 private:

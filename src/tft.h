@@ -6,6 +6,8 @@
 #include "Adafruit_ST7735.h"
 #include "temperatures.h"
 #include "acceleration_measurements.h"
+#include "calibrations.h"
+#include "algorithm_animation.h"
 
 
 class TFT
@@ -13,7 +15,7 @@ class TFT
     
     public:
 
-        TFT(struct temperatures *, struct acceleration_measurements *);
+        TFT(struct temperatures *, struct acceleration_measurements *, struct calibrations *);
         void setup();
         void begin();
 
@@ -28,6 +30,8 @@ class TFT
         Adafruit_ST7735* adafruit;
         temperatures *m_ptr_temperatures;
         acceleration_measurements *m_ptr_acceleration_measurements;
+        calibrations *m_ptr_calibration;
+        AlgorithmAnimation* algorithmAnimation;
         char buffer [7];
 
 };

@@ -10,10 +10,6 @@ Light::Light(struct temperatures *ptr_temperatures, struct calibrations *ptr_cal
 }
 
 void Light::begin() {
-  delay(50);
-  Serial.println("-------------------------");
-  Serial.println("Light is ready");
-  Serial.println("-------------------------");
 }
 
 void Light::setup() {

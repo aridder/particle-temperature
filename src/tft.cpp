@@ -17,31 +17,33 @@
 #define LINE_HEIGHT_TEXT_SIZE_1 10
 #define LINE_HEIGHT_TEXT_SIZE_2 20
 
-TFT::TFT(struct temperatures *ptr_temperaure, struct acceleration_measurements *ptr_acceleration_measurements) {
+TFT::TFT(struct temperatures *ptr_temperaure, struct acceleration_measurements *ptr_acceleration_measurements, struct calibrations *ptr_calibration) {
   adafruit                        = new Adafruit_ST7735(TFT_CS, TFT_DC, TFT_RST);
   m_ptr_temperatures              = ptr_temperaure;
   m_ptr_acceleration_measurements = ptr_acceleration_measurements;
+  m_ptr_calibration               = ptr_calibration;
   setup();
 }
 
 void TFT::setup() {
-  Time.zone(1);
+  algorithmAnimation               = new AlgorithmAnimation(adafruit, 20);
   adafruit->initG();
+  adafruit->fillScreen(ST7735_BLACK);
   adafruit->setRotation(3);
   adafruit->invertDisplay(1);
-  adafruit->fillScreen(ST7735_BLUE);
+  
+
+ /*  adafruit->fillScreen(ST7735_BLUE);
   adafruit->setTextSize(2);
   adafruit->setCursor(35, 35);
   adafruit->setTextColor(ST7735_YELLOW);
   adafruit->setTextWrap(true);
-  adafruit->print("STARTING");
+  adafruit->print("STARTING"); */
 }
 
 void TFT::begin() {
-  delay(50);
-  Serial.println("-------------------------");
-  Serial.println("Serial tft is ready");
-  Serial.println("-------------------------");
+  algorithmAnimation->begin();
+  Time.zone(m_ptr_calibration->time);
 }
 
 void TFT::drawTime() {

@@ -7,7 +7,6 @@
 #include "temperatures.h"
 #include "acceleration_measurements.h"
 #include "calibrations.h"
-#include "algorithm_animation.h"
 
 
 class TFT
@@ -31,7 +30,6 @@ class TFT
         temperatures *m_ptr_temperatures;
         acceleration_measurements *m_ptr_acceleration_measurements;
         calibrations *m_ptr_calibration;
-        AlgorithmAnimation* algorithmAnimation;
         char buffer [7];
 
 };

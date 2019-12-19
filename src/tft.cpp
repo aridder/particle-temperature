@@ -26,23 +26,21 @@ TFT::TFT(struct temperatures *ptr_temperaure, struct acceleration_measurements *
 }
 
 void TFT::setup() {
-  algorithmAnimation               = new AlgorithmAnimation(adafruit, 20);
   adafruit->initG();
   adafruit->fillScreen(ST7735_BLACK);
   adafruit->setRotation(3);
   adafruit->invertDisplay(1);
   
 
- /*  adafruit->fillScreen(ST7735_BLUE);
+  adafruit->fillScreen(ST7735_BLUE);
   adafruit->setTextSize(2);
   adafruit->setCursor(35, 35);
   adafruit->setTextColor(ST7735_YELLOW);
   adafruit->setTextWrap(true);
-  adafruit->print("STARTING"); */
+  adafruit->print("STARTING");
 }
 
 void TFT::begin() {
-  algorithmAnimation->begin();
   Time.zone(m_ptr_calibration->time);
 }
 

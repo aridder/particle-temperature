@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "mapbox-gl-vue": "^2.0.3"
+  }
+}

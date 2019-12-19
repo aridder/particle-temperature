@@ -1,10 +1,10 @@
 #ifndef PARTICLE_COMMUNICATION_H
 #define PARTICLE_COMMUNICATION_H
-#include "Particle.h"
 #include "acceleration_measurements.h"
 #include "calibrations.h"
 #include "sd_card.h"
 #include "temperatures.h"
+#include "Particle.h"
 
 class ParticleCommunication {
 

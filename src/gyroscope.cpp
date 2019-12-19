@@ -1,6 +1,5 @@
 #include "gyroscope.h"
 #include "MPU6050.h"
-#include "application.h"
 
 Gyroscope::Gyroscope(struct acceleration_measurements *acceleration_measurements) {
   m_ptr_acceleration_measurements = acceleration_measurements;

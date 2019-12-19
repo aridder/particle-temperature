@@ -1,5 +1,4 @@
 #include "airtemp_and_humidity_sensor.h"
-#include "application.h"
 
 #define DHTPIN D2
 #define DHTTYPE DHT11

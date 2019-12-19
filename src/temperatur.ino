@@ -1,9 +1,3 @@
-/******************************************************/
-//       THIS IS A GENERATED FILE - DO NOT EDIT       //
-/******************************************************/
-
-#include "application.h"
-#line 1 "/home/aridder/Particle/temperature/src/temperatur.ino"
 #include "calibrations.h"
 #include "gyroscope.h"
 #include "light.h"
@@ -13,14 +7,6 @@
 #include "watertemp_sensor.h"
 #include "airtemp_and_humidity_sensor.h"
 
-void setup();
-void loop();
-void readFromTempAndHumiditySensors(unsigned long currentMillis);
-void readFromGyrometerAndDrawTheAccelerationDataOnTFT(unsigned long currentMillis);
-void readChangeTFTScreenPage(unsigned long currentMillis);
-void publishEvents(unsigned long currentMillis);
-void setupSerial();
-#line 10 "/home/aridder/Particle/temperature/src/temperatur.ino"
 struct update_intervals {
   const unsigned long UPDATE_INTERVAL_GYROSCOPE = 100;
   const unsigned long UPDATE_INTERVAL_TEMP_HUM  = 2000;

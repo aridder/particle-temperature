@@ -98,6 +98,8 @@ Med Particle Cloud API kan man også lage "Functions". Med en function kan man t
 
 Med disse funksjonene kan brukere kalibrere temperatur, tidssone og vanntemperaturgrensen for når lyset skal lyse.
 
+Dette lagres på SD-kort slik at ved restart, strømbrudd etc er kalibreringene fortsatt gjeldende.
+
 Kan trigges over curl slik:
 
 ```curl

@@ -121,6 +121,13 @@ Hvor "calibrateWaterTempFunction" er navnet på funksjonen du kaller og args gir
 
 ### Video
 
+Delte opp videoene basert på funksjonalitet. Passord til videoene er "Embedded"
+1. [Bytte tidssone fra API](https://vimeo.com/380393295)
+2. [Cloud API Variabler](https://vimeo.com/380393567)
+3. [Endre grenseverdi vanntemperatur for når LED skal lyse](https://vimeo.com/380393567)
+4. [Lese av temperaturer og akselersjonsdata fra tft-skjerm](https://vimeo.com/380393757)
+5. [Se at farge for bølgehøydeindikasjon endres ved bevegelse](https://vimeo.com/380393757)
+
 ### Komponenter brukt
 
 - Particle Photon
@@ -143,7 +150,7 @@ Jeg fant ikke korrekt tft-skjerm og heller ikke korrekt SD-kort del, men har bru
 
 Her er en jpg utgave av fritzingen:
 
-![Fritzing](./fritzing/water-temperature-station.jpg)
+![Fritzing](./dokumentasjon/water-temperature-station.jpg)
 
 ### Kode
 
